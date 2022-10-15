@@ -1,0 +1,49 @@
+.header {
+  display: flex;
+  margin: 0 auto;
+  max-width: 50%;
+
+  /* padding: 4.8rem 2.4rem;
+  border: 1px solid white; */
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2.4rem;
+  padding-bottom: 2rem;
+  margin: 4.8rem 0;
+  border: 0.3rem solid hsl(217, 16%, 45%);
+  border-radius: 1.4rem;
+  width: 100%;
+}
+
+.rpsls-logo {
+  height: 13.5rem;
+  width: 12.5rem;
+}
+
+.score-container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.2rem;
+  background-color: #eee;
+  padding: 0 6.4rem;
+  border-radius: 1.4rem;
+}
+
+.score-container p {
+  color: hsl(229, 64%, 46%);
+  font-size: 2rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2rem;
+}
+
+.score-container h1 {
+  color: hsl(229, 25%, 31%);
+  font-size: 8rem;
+}

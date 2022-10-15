@@ -59,13 +59,14 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 9.6rem;
-  width: 9.6rem;
+  height: 11.5rem;
+  width: 11.5rem;
   border-radius: 100%;
+  border: 1.4rem solid black;
   background-color: white;
 }
 
 .play-icon {
-  width: 4.5rem;
-  height: 5.2rem;
+  width: 3.7rem;
+  height: 4.6rem;
 }

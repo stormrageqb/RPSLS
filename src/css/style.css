@@ -53,6 +53,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-bottom: 8rem;
 }
 
 .pentagon-container {
@@ -111,4 +112,11 @@
   border-color: hsl(261, 73%, 60%);
   box-shadow: 0px 5px hsla(261, 72%, 63%, 0.6);
   bottom: -4rem;
+}
+
+/* FOOTER STYLES */
+.footer {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
 }

@@ -51,7 +51,7 @@
   font-size: 8rem;
 }
 
-/* MAIN-CONTENT STYLES */
+/* MAIN-CONTENT - START - STYLES */
 main {
   justify-self: center;
   align-self: center;
@@ -60,7 +60,7 @@ main {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 8rem;
+  /* margin-bottom: 8rem; */
 }
 
 .pentagon-container {
@@ -119,6 +119,38 @@ main {
   border-color: hsl(261, 73%, 60%);
   box-shadow: 0px 5px hsla(261, 72%, 63%, 0.6);
   bottom: -4rem;
+}
+
+/* MAIN-CONTENT - FACEOFF - STYLES */
+.game-round-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 9.4rem;
+  justify-items: center;
+  align-items: center;
+}
+
+.choice-text {
+  font-size: 3.2rem;
+  text-transform: uppercase;
+  letter-spacing: 0.3rem;
+}
+
+/* Overwrite styles for round */
+.choice-circle {
+  position: static;
+  height: 34rem;
+  width: 34rem;
+  cursor: default;
+}
+
+.choice-circle:hover {
+  outline: none;
+}
+
+.in-play-icon {
+  width: 10.7rem;
+  height: 12.6rem;
 }
 
 /* FOOTER STYLES */

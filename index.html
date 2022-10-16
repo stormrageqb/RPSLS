@@ -36,7 +36,7 @@
     </header>
     <main>
       <div class="play-container">
-        <div class="pentagon-container">
+        <!-- <div class="pentagon-container">
           <img src="./src/img/logos/bg-pentagon.svg" alt="Pentagon shape" />
           <div class="play-circle spock">
             <img
@@ -71,6 +71,33 @@
               class="play-icon"
               src="./src/img/logos/icon-lizard.svg"
               alt="Lizard icon"
+            />
+          </div>
+        </div> -->
+
+        <!-- INSERT THIS HTML INTO .play-container - replaces previous HTML -->
+        <div class="game-round-container">
+          <h2 class="choice-text">You picked:</h2>
+          <p>&nbsp;</p>
+          <h2 class="choice-text">The house picked:</h2>
+          <div class="play-circle scissors choice-circle">
+            <img
+              class="play-icon in-play-icon"
+              src="./src/img/logos/icon-scissors.svg"
+              alt="Scissors icon"
+            />
+          </div>
+
+          <div class="win-lose-container">
+            <h2 class="win-lose-text">You win</h2>
+            <button class="btn">Play Again</button>
+          </div>
+
+          <div class="play-circle paper choice-circle">
+            <img
+              class="play-icon in-play-icon"
+              src="./src/img/logos/icon-paper.svg"
+              alt="Paper icon"
             />
           </div>
         </div>

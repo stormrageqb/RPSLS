@@ -1,8 +1,11 @@
+import { CPU_CHOICE_RANGE } from "./config.js";
+
 export const state = {
   computerResponse: {},
   userResponse: {},
 };
 
+// Computer Response:
 const getComputerResponse = function (num) {
   const randomNum = Math.floor(Math.random() * num);
   if (randomNum === 0) {
@@ -27,10 +30,8 @@ const getComputerResponse = function (num) {
   }
 };
 const returnComputerState = function () {
-  const num = 5;
-  state.computerResponse = getComputerResponse(num);
+  state.computerResponse = getComputerResponse(CPU_CHOICE_RANGE);
 };
 returnComputerState();
 
-// getComputerResponse(5);
 console.log(state.computerResponse);

@@ -10,4 +10,9 @@ const controlComputerResponse = function () {
   }
 };
 
-controlComputerResponse();
+const init = function () {
+  faceOffView.addHandlerClick(controlComputerResponse);
+};
+
+init();
+// controlComputerResponse();

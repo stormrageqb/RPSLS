@@ -153,6 +153,32 @@ main {
   height: 12.6rem;
 }
 
+.win-lose-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.win-lose-text {
+  font-size: 6.2rem;
+  text-transform: uppercase;
+  text-align: center;
+  letter-spacing: 0.3rem;
+}
+
+.btn-play-again {
+  font-size: 2rem;
+  background-color: #fff;
+  color: #3b4262;
+  padding: 2.8rem 8.2rem;
+}
+
+.btn-play-again:hover {
+  background-color: transparent;
+  color: #fff;
+}
+
 /* FOOTER STYLES */
 .footer {
   display: flex;

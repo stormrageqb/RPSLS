@@ -11,7 +11,10 @@ const controlComputerResponse = function () {
 };
 
 const init = function () {
-  faceOffView.addHandlerClick(controlComputerResponse);
+  faceOffView.addHandlerClick(
+    controlComputerResponse,
+    model.state.computerResponse
+  );
 };
 
 init();

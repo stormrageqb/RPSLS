@@ -1,17 +1,21 @@
 class faceOffView {
-  #data;
+  _data;
   #parentElement = document.querySelector(".play-container");
   #gameContainerElement = document.querySelector(".pentagon-container");
   renderComputerResponse(data) {
-    this.#data = data;
-    console.log(data);
+    this._data = data;
+    console.log("computer response:", data);
   }
 
-  addHandlerClick(handler) {
+  addHandlerClick(handler, data) {
     this.#gameContainerElement.addEventListener("click", function (e) {
+      this._data = data;
+      console.log(data);
       const playBtn = e.target.closest(".play-circle");
       if (!playBtn) return;
-      console.log(playBtn);
+      const userSelection = playBtn.dataset.id;
+      console.log(userSelection);
+      handler(userSelection);
     });
   }
 }

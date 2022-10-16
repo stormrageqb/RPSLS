@@ -219,15 +219,18 @@ main {
 
 .rule-heading {
   color: #3b4262;
+  font-size: 3.6rem;
+  text-transform: uppercase;
+  letter-spacing: 0.3rem;
 }
 
 .btn-close-modal {
   font-family: inherit;
   color: #3b4262;
   position: absolute;
-  top: 0.5rem;
-  right: 1.6rem;
-  font-size: 3.2rem;
+  top: 1rem;
+  right: 4rem;
+  font-size: 8rem;
   cursor: pointer;
   border: none;
   background: none;

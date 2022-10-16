@@ -4,7 +4,10 @@
   display: flex;
   margin: 0 auto;
   max-width: 50%;
-  margin-bottom: 8rem;
+  width: 50%;
+  /* margin-bottom: 8rem; */
+  /* justify-self: center; */
+  align-self: center;
 }
 
 .container {
@@ -49,6 +52,10 @@
 }
 
 /* MAIN-CONTENT STYLES */
+main {
+  justify-self: center;
+  align-self: center;
+}
 .play-container {
   display: flex;
   justify-content: center;

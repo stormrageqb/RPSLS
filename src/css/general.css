@@ -14,11 +14,16 @@
 
 html {
   font-size: 62.5%;
+  height: 100%;
 }
 
 body {
+  display: grid;
+  grid-template-rows: 20fr 60fr 20fr;
+  /* grid-template-columns: 1fr; */
   max-width: 180rem;
   margin: 0 auto;
+  height: 100%;
   line-height: 1;
   font-weight: 400;
   color: #eee;
@@ -43,7 +48,6 @@ body {
   background-color: transparent;
   box-shadow: inset 0 0 0.3rem #fff;
   border-radius: 1rem;
-  margin-bottom: 2.4rem;
   transition: all 0.3s;
 }
 

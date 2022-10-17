@@ -10,6 +10,16 @@ const controlComputerResponse = function () {
   }
 };
 
+// const controlUserResponse = function () {
+//   try {
+//     const userResponse = faceOffView.getUserResponse((data = "paper"));
+//     // if (!userResponse) return;
+//     console.log(userResponse);
+//   } catch (err) {
+//     console.error(err);
+//   }
+// };
+
 const init = function () {
   faceOffView.addHandlerClick(
     controlComputerResponse,

@@ -1,16 +1,33 @@
 class faceOffView {
   _data;
-  #parentElement = document.querySelector(".play-container");
+  _userResponse;
+  _parentElement = document.querySelector(".play-container");
   #gameContainerElement = document.querySelector(".pentagon-container");
   renderComputerResponse(data) {
     this._data = data;
     console.log("computer response:", data);
   }
 
+  // getUserResponse(data) {
+  //   this._userResponse = data;
+  //   this.#gameContainerElement.addEventListener("click", function (e) {
+  //     const playBtn = e.target.closest(".play-circle");
+  //     console.log(playBtn);
+  //     // if (!playBtn) return;
+  //     this._userResponse = playBtn.dataset.id;
+  //     console.log(userResponse);
+  //   });
+
+  //   console.log(this._userResponse);
+  //   return this._userResponse;
+  // }
+
   addHandlerClick(handler, computerResponse) {
     const compareChoices = function (computerResponse, userSelection) {
       if (computerResponse === userSelection) {
         console.log("It is a draw");
+        const resultText = "It is a draw";
+        // renderMatch(computerResponse, userSelection, resultText);
       }
 
       if (computerResponse === "rock" && userSelection === "scissors") {

@@ -2,13 +2,15 @@ class FaceOffView {
   _data;
   _userResponse;
   _resultText;
+  _score;
   _parentElement = document.querySelector('.play-container');
   #gameContainerElement = document.querySelector('.pentagon-container');
 
-  renderComputerResponse(data, userResponse, resultText) {
+  renderComputerResponse(data, userResponse, resultText, score) {
     this._data = data;
     this._userResponse = userResponse;
     this._resultText = resultText;
+    this._score = score;
     console.log(resultText);
     console.log(userResponse);
     console.log(this._userResponse);
@@ -65,28 +67,31 @@ class FaceOffView {
   //   return this._userResponse;
   // }
 
-  addHandlerClick(handler, computerResponse, userResponse, resultText) {
+  addHandlerClick(handler, computerResponse, userResponse, resultText, score) {
     // console.log(this._userResponse);
     // console.log(resultText);
+    console.log(score);
     const compareChoices = function (
       computerResponse,
       userSelection,
-      resultText
+      resultText,
+      score
     ) {
       if (computerResponse === userSelection) {
         console.log('It is a draw');
         resultText.push('Draw');
-        // resultText = "It's a draw!";
-        // return resultText;
-        // renderMatch(computerResponse, userSelection, resultText);
       }
 
       if (computerResponse === 'rock' && userSelection === 'scissors') {
         console.log('The CPU wins');
         resultText.push('You lose');
+        score--;
+        console.log(score);
       } else if (userSelection === 'rock' && computerResponse === 'scissors') {
         console.log('You win!');
         resultText.push('You win');
+        score++;
+        console.log(score);
       }
 
       if (computerResponse === 'paper' && userSelection === 'rock') {
@@ -177,7 +182,7 @@ class FaceOffView {
       console.log(userResponse);
       this._userResponse = userResponse;
       console.log(this._userResponse);
-      compareChoices(computerResponse, userResponse[0], resultText);
+      compareChoices(computerResponse, userResponse[0], resultText, score);
       handler(userResponse[0]);
     };
 

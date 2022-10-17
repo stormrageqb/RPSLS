@@ -1,5 +1,6 @@
 import * as model from './model.js';
 import FaceOffView from './views/faceOffView.js';
+// Necessary for modal render
 import ModalView from './views/modalView.js';
 
 const controlComputerResponse = function () {
@@ -8,7 +9,8 @@ const controlComputerResponse = function () {
     FaceOffView.renderComputerResponse(
       model.state.computerResponse,
       model.state.userResponse,
-      model.state.resultText
+      model.state.resultText,
+      model.state.score
     );
   } catch (err) {
     console.error(err);
@@ -30,7 +32,8 @@ const init = function () {
     controlComputerResponse,
     model.state.computerResponse,
     model.state.userResponse,
-    model.state.resultText
+    model.state.resultText,
+    model.state.score
   );
 };
 

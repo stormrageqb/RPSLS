@@ -16,7 +16,6 @@ class ModalView {
 
   _addHandlerShowModal() {
     this._btnOpen.addEventListener('click', this.toggleModal.bind(this));
-    console.log('test');
   }
 
   _addHandlerHideModal() {

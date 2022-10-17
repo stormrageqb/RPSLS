@@ -5,7 +5,8 @@ export const state = {
   computerResponse: {},
   userResponse: [],
   resultText: [],
-  score: INITIAL_SCORE,
+  // score: INITIAL_SCORE,
+  score: [],
 };
 
 // Computer Response:

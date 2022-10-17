@@ -6,7 +6,8 @@ const controlComputerResponse = function () {
     // model.getComputerResponse()
     faceOffView.renderComputerResponse(
       model.state.computerResponse,
-      model.state.userResponse
+      model.state.userResponse,
+      model.state.resultText
     );
   } catch (err) {
     console.error(err);
@@ -27,7 +28,8 @@ const init = function () {
   faceOffView.addHandlerClick(
     controlComputerResponse,
     model.state.computerResponse,
-    model.state.userResponse
+    model.state.userResponse,
+    model.state.resultText
   );
 };
 

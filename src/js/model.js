@@ -3,6 +3,7 @@ import { CPU_CHOICE_RANGE } from "./config.js";
 export const state = {
   computerResponse: {},
   userResponse: [],
+  resultText: [],
 };
 
 // Computer Response:

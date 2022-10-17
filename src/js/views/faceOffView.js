@@ -1,12 +1,15 @@
 class faceOffView {
   _data;
   _userResponse;
+  _resultText;
   _parentElement = document.querySelector(".play-container");
   #gameContainerElement = document.querySelector(".pentagon-container");
 
-  renderComputerResponse(data, userResponse) {
+  renderComputerResponse(data, userResponse, resultText) {
     this._data = data;
     this._userResponse = userResponse;
+    this._resultText = resultText;
+    console.log(resultText);
     console.log(userResponse);
     console.log(this._userResponse);
     console.log(this);
@@ -19,6 +22,7 @@ class faceOffView {
   #generateMarkup() {
     console.log(this._data);
     console.log(this._userResponse);
+    console.log(this._resultText);
     return ` <div class="game-round-container">
     <h2 class="choice-text">You picked:</h2>
     <p>&nbsp;</p>
@@ -32,7 +36,7 @@ class faceOffView {
     </div>
 
     <div class="win-lose-container">
-      <h2 class="win-lose-text">You win</h2>
+      <h2 class="win-lose-text">${this._resultText}</h2>
       <button class="btn btn-play-again">Play Again</button>
     </div>
 
@@ -59,77 +63,103 @@ class faceOffView {
   //   return this._userResponse;
   // }
 
-  addHandlerClick(handler, computerResponse, userResponse) {
+  addHandlerClick(handler, computerResponse, userResponse, resultText) {
     // console.log(this._userResponse);
-    const compareChoices = function (computerResponse, userSelection) {
+    // console.log(resultText);
+    const compareChoices = function (
+      computerResponse,
+      userSelection,
+      resultText
+    ) {
       if (computerResponse === userSelection) {
         console.log("It is a draw");
-        const resultText = "It is a draw";
+        resultText.push("Draw");
+        // resultText = "It's a draw!";
         // return resultText;
         // renderMatch(computerResponse, userSelection, resultText);
       }
 
       if (computerResponse === "rock" && userSelection === "scissors") {
         console.log("The CPU wins");
+        resultText.push("You lose");
       } else if (userSelection === "rock" && computerResponse === "scissors") {
         console.log("You win!");
+        resultText.push("You win");
       }
 
       if (computerResponse === "paper" && userSelection === "rock") {
-        console.log("The CPU wins");
+        console.log("You lose");
+        resultText.push("You lose");
       } else if (userSelection === "paper" && computerResponse === "rock") {
         console.log("You win!");
+        resultText.push("You win");
       }
 
       if (computerResponse === "scissors" && userSelection === "paper") {
-        console.log("The CPU wins");
+        console.log("You lose");
+        resultText.push("You lose");
       } else if (userSelection === "scissors" && computerResponse === "paper") {
         console.log("You win!");
+        resultText.push("You win");
       }
 
       if (computerResponse === "spock" && userSelection === "scissors") {
         console.log("The CPU wins");
+        resultText.push("You lose");
       } else if (userSelection === "spock" && computerResponse === "scissors") {
         console.log("You win!");
+        resultText.push("You win");
       }
 
       if (computerResponse === "spock" && userSelection === "rock") {
         console.log("The CPU wins");
+        resultText.push("You lose");
       } else if (userSelection === "spock" && computerResponse === "rock") {
         console.log("You win!");
+        resultText.push("You win");
       }
 
       if (computerResponse === "paper" && userSelection === "spock") {
         console.log("The CPU wins");
+        resultText.push("You lose");
       } else if (userSelection === "paper" && computerResponse === "spock") {
         console.log("You win!");
+        resultText.push("You win");
       }
 
       if (computerResponse === "lizard" && userSelection === "spock") {
         console.log("The CPU wins");
+        resultText.push("You lose");
       } else if (userSelection === "lizard" && computerResponse === "spock") {
         console.log("You win!");
+        resultText.push("You win");
       }
 
       if (computerResponse === "rock" && userSelection === "lizard") {
         console.log("The CPU wins");
+        resultText.push("You lose");
       } else if (userSelection === "rock" && computerResponse === "lizard") {
         console.log("You win!");
+        resultText.push("You win");
       }
 
       if (computerResponse === "scissors" && userSelection === "lizard") {
         console.log("The CPU wins");
+        resultText.push("You lose");
       } else if (
         userSelection === "scissors" &&
         computerResponse === "lizard"
       ) {
         console.log("You win!");
+        resultText.push("You win");
       }
 
       if (computerResponse === "lizard" && userSelection === "paper") {
         console.log("The CPU wins");
+        resultText.push("You lose");
       } else if (userSelection === "lizard" && computerResponse === "paper") {
         console.log("You win!");
+        resultText.push("You win");
       }
     };
 
@@ -145,7 +175,7 @@ class faceOffView {
       console.log(userResponse);
       this._userResponse = userResponse;
       console.log(this._userResponse);
-      compareChoices(computerResponse, userResponse[0]);
+      compareChoices(computerResponse, userResponse[0], resultText);
       handler(userResponse[0]);
     };
 

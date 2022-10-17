@@ -1,4 +1,4 @@
-class faceOffView {
+class FaceOffView {
   _data;
   _userResponse;
   _resultText;
@@ -249,4 +249,4 @@ class faceOffView {
   //   }
 }
 
-export default new faceOffView();
+export default new FaceOffView();

@@ -1,10 +1,10 @@
 import * as model from "./model.js";
-import faceOffView from "./views/faceOffView.js";
+import FaceOffView from "./views/faceOffView.js";
 
 const controlComputerResponse = function () {
   try {
     // model.getComputerResponse()
-    faceOffView.renderComputerResponse(
+    FaceOffView.renderComputerResponse(
       model.state.computerResponse,
       model.state.userResponse,
       model.state.resultText
@@ -25,7 +25,7 @@ const controlComputerResponse = function () {
 // };
 
 const init = function () {
-  faceOffView.addHandlerClick(
+  FaceOffView.addHandlerClick(
     controlComputerResponse,
     model.state.computerResponse,
     model.state.userResponse,

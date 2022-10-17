@@ -4,7 +4,10 @@ import faceOffView from "./views/faceOffView.js";
 const controlComputerResponse = function () {
   try {
     // model.getComputerResponse()
-    faceOffView.renderComputerResponse(model.state.computerResponse);
+    faceOffView.renderComputerResponse(
+      model.state.computerResponse,
+      model.state.userResponse
+    );
   } catch (err) {
     console.error(err);
   }
@@ -23,7 +26,8 @@ const controlComputerResponse = function () {
 const init = function () {
   faceOffView.addHandlerClick(
     controlComputerResponse,
-    model.state.computerResponse
+    model.state.computerResponse,
+    model.state.userResponse
   );
 };
 

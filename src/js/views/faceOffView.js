@@ -1,6 +1,6 @@
 class faceOffView {
   _data;
-  _userResponse;
+  // _userResponse;
   _parentElement = document.querySelector(".play-container");
   #gameContainerElement = document.querySelector(".pentagon-container");
   renderComputerResponse(data) {
@@ -94,7 +94,7 @@ class faceOffView {
       }
     };
 
-    this.#gameContainerElement.addEventListener("click", function (e) {
+    const getUserResponse = function (e) {
       this._data = computerResponse;
       console.log(computerResponse);
       const playBtn = e.target.closest(".play-circle");
@@ -103,7 +103,8 @@ class faceOffView {
       console.log(userSelection);
       compareChoices(computerResponse, userSelection);
       handler(userSelection);
-    });
+    };
+    this.#gameContainerElement.addEventListener("click", getUserResponse);
   }
 
   //   compareChoices(computerResponse, userSelection) {

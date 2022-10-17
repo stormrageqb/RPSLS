@@ -5,7 +5,6 @@ class ModalView {
   _btnClose = document.querySelector(".btn-close-modal");
 
   constructor() {
-    super();
     this._addHandlerShowModal();
     this._addHandlerHideModal();
   }
@@ -15,8 +14,9 @@ class ModalView {
     this._modalWindow.classList.toggle("hidden");
   }
 
-  _addHandleShowModal() {
+  _addHandlerShowModal() {
     this._btnOpen.addEventListener("click", this.toggleModal.bind(this));
+    console.log("test");
   }
 
   _addHandlerHideModal() {

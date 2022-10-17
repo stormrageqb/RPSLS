@@ -1,5 +1,6 @@
 import * as model from "./model.js";
 import FaceOffView from "./views/faceOffView.js";
+import ModalView from "./views/modalView.js";
 
 const controlComputerResponse = function () {
   try {
@@ -13,6 +14,8 @@ const controlComputerResponse = function () {
     console.error(err);
   }
 };
+
+// const control
 
 // const controlUserResponse = function () {
 //   try {

@@ -6,7 +6,7 @@ export const state = {
   userResponse: [],
   resultText: [],
   // score: INITIAL_SCORE,
-  score: [],
+  score: [0],
 };
 
 // Computer Response:
@@ -39,3 +39,23 @@ const returnComputerState = function () {
 returnComputerState();
 
 console.log(state.computerResponse);
+
+export const persistScore = function () {
+  try {
+    localStorage.setItem('score', JSON.stringify(state.score));
+  } catch (err) {
+    console.error(err, 'localStorage disabled - cannot keep track of score');
+  }
+};
+
+// persistScore();
+
+const init = function () {
+  const storage = localStorage.getItem('score');
+  console.log(storage);
+  if (storage) state.score = JSON.parse(storage);
+  console.log(state.score);
+  // localStorage.clear();
+};
+
+init();

@@ -12,11 +12,17 @@ const controlComputerResponse = function () {
       model.state.resultText,
       model.state.score
     );
+    // FaceOffView.renderScoreOnLoad(model.state.score);
   } catch (err) {
     console.error(err);
   }
 };
 
+const controlScoreLoad = function () {
+  FaceOffView.renderScoreOnLoad(model.state.score);
+};
+
+controlScoreLoad();
 // const controlUserResponse = function () {
 //   try {
 //     const userResponse = faceOffView.getUserResponse((data = "paper"));
@@ -33,7 +39,8 @@ const init = function () {
     model.state.computerResponse,
     model.state.userResponse,
     model.state.resultText,
-    model.state.score
+    model.state.score,
+    model.persistScore
   );
 };
 

@@ -7,6 +7,14 @@ class FaceOffView {
   _scoreElement = document.querySelector('.score');
   #gameContainerElement = document.querySelector('.pentagon-container');
 
+  renderScoreOnLoad(score) {
+    this._score = score;
+    console.log(score);
+    const scoreMarkup = this.#generateScoreMarkup();
+    this._scoreElement.innerHTML = '';
+    this._scoreElement.insertAdjacentHTML('afterbegin', scoreMarkup);
+  }
+
   renderComputerResponse(data, userResponse, resultText, score) {
     this._data = data;
     this._userResponse = userResponse;
@@ -79,127 +87,137 @@ class FaceOffView {
   //   return this._userResponse;
   // }
 
-  addHandlerClick(handler, computerResponse, userResponse, resultText, score) {
+  addHandlerClick(
+    handler,
+    computerResponse,
+    userResponse,
+    resultText,
+    score,
+    persistScore
+  ) {
     // console.log(this._userResponse);
-    console.log(resultText);
-    // console.log(score);
+    // console.log(resultText);
+    console.log(score);
     const compareChoices = function (
       computerResponse,
       userSelection,
       resultText,
-      score
+      score,
+      persistScore
     ) {
       if (computerResponse === userSelection) {
         console.log('It is a draw');
         resultText.push('Draw');
-        score.push(+score + 0);
+        score[0] = +score + 0;
       }
 
       if (computerResponse === 'rock' && userSelection === 'scissors') {
         console.log('The CPU wins');
         resultText.push('You lose');
-        score.push(+score - 1);
+        score[0] = +score - 1;
+        // persistScore();
         console.log(score);
       } else if (userSelection === 'rock' && computerResponse === 'scissors') {
         console.log('You win!');
         resultText.push('You win');
-        score.push(+score + 1);
-
+        score[0] = +score + 1;
+        // persistScore();
         console.log(score);
       }
 
       if (computerResponse === 'paper' && userSelection === 'rock') {
         console.log('You lose');
         resultText.push('You lose');
-        score.push(+score - 1);
+        score[0] = +score - 1;
       } else if (userSelection === 'paper' && computerResponse === 'rock') {
         console.log('You win!');
         resultText.push('You win');
-        score.push(+score + 1);
+        score[0] = +score + 1;
       }
 
       if (computerResponse === 'scissors' && userSelection === 'paper') {
         console.log('You lose');
         resultText.push('You lose');
-        score.push(+score - 1);
+        score[0] = +score - 1;
       } else if (userSelection === 'scissors' && computerResponse === 'paper') {
         console.log('You win!');
         resultText.push('You win');
-        score.push(+score + 1);
+        score[0] = +score + 1;
       }
 
       if (computerResponse === 'spock' && userSelection === 'scissors') {
         console.log('The CPU wins');
         resultText.push('You lose');
-        score.push(+score - 1);
+        score[0] = +score - 1;
       } else if (userSelection === 'spock' && computerResponse === 'scissors') {
         console.log('You win!');
         resultText.push('You win');
-        score.push(+score + 1);
+        score[0] = +score + 1;
       }
 
       if (computerResponse === 'spock' && userSelection === 'rock') {
         console.log('The CPU wins');
         resultText.push('You lose');
-        score.push(+score - 1);
+        score[0] = +score - 1;
       } else if (userSelection === 'spock' && computerResponse === 'rock') {
         console.log('You win!');
         resultText.push('You win');
-        score.push(+score + 1);
+        score[0] = +score + 1;
       }
 
       if (computerResponse === 'paper' && userSelection === 'spock') {
         console.log('The CPU wins');
         resultText.push('You lose');
-        score.push(+score - 1);
+        score[0] = +score - 1;
       } else if (userSelection === 'paper' && computerResponse === 'spock') {
         console.log('You win!');
         resultText.push('You win');
-        score.push(+score + 1);
+        score[0] = +score + 1;
       }
 
       if (computerResponse === 'lizard' && userSelection === 'spock') {
         console.log('The CPU wins');
         resultText.push('You lose');
-        score.push(+score - 1);
+        score[0] = +score - 1;
       } else if (userSelection === 'lizard' && computerResponse === 'spock') {
         console.log('You win!');
         resultText.push('You win');
-        score.push(+score + 1);
+        score[0] = +score + 1;
       }
 
       if (computerResponse === 'rock' && userSelection === 'lizard') {
         console.log('The CPU wins');
         resultText.push('You lose');
-        +score.push(+score - 1);
+        score[0] = +score - 1;
       } else if (userSelection === 'rock' && computerResponse === 'lizard') {
         console.log('You win!');
         resultText.push('You win');
-        score.push(+score + 1);
+        score[0] = +score + 1;
       }
 
       if (computerResponse === 'scissors' && userSelection === 'lizard') {
         console.log('The CPU wins');
         resultText.push('You lose');
-        score.push(+score - 1);
+        score[0] = +score - 1;
       } else if (
         userSelection === 'scissors' &&
         computerResponse === 'lizard'
       ) {
         console.log('You win!');
         resultText.push('You win');
-        score.push(+score + 1);
+        score[0] = +score + 1;
       }
 
       if (computerResponse === 'lizard' && userSelection === 'paper') {
         console.log('The CPU wins');
         resultText.push('You lose');
-        +score.push(+score - 1);
+        score[0] = +score - 1;
       } else if (userSelection === 'lizard' && computerResponse === 'paper') {
         console.log('You win!');
         resultText.push('You win');
-        score.push(+score + 1);
+        score[0] = +score + 1;
       }
+      persistScore();
     };
 
     const getUserResponse = function (e) {
@@ -214,7 +232,13 @@ class FaceOffView {
       console.log(userResponse);
       this._userResponse = userResponse;
       console.log(this._userResponse);
-      compareChoices(computerResponse, userResponse[0], resultText, score);
+      compareChoices(
+        computerResponse,
+        userResponse[0],
+        resultText,
+        score,
+        persistScore
+      );
       handler(userResponse[0]);
     };
 

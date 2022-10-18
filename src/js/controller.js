@@ -22,6 +22,10 @@ const controlScoreLoad = function () {
   FaceOffView.renderScoreOnLoad(model.state.score);
 };
 
+const refreshPage = function () {
+  FaceOffView.renderGameStart();
+};
+
 controlScoreLoad();
 // const controlUserResponse = function () {
 //   try {
@@ -42,6 +46,7 @@ const init = function () {
     model.state.score,
     model.persistScore
   );
+  FaceOffView.addHandlerClickRefresh(refreshPage);
 };
 
 init();

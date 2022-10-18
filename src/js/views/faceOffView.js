@@ -6,6 +6,7 @@ class FaceOffView {
   _parentElement = document.querySelector('.play-container');
   _scoreElement = document.querySelector('.score');
   #gameContainerElement = document.querySelector('.pentagon-container');
+  _playAgainBtn = document.querySelector('.btn-play-again');
 
   renderScoreOnLoad(score) {
     this._score = score;
@@ -35,6 +36,10 @@ class FaceOffView {
     this._scoreElement.insertAdjacentHTML('afterbegin', scoreMarkup);
   }
 
+  renderGameStart() {
+    window.location.reload();
+  }
+
   #generateMarkup() {
     console.log(this._data);
     console.log(this._userResponse);
@@ -54,7 +59,9 @@ class FaceOffView {
 
         <div class="win-lose-container">
           <h2 class="win-lose-text">${this._resultText}</h2>
-          <button class="btn btn-play-again">Play Again</button>
+          <button data-id="playBtn" class="btn btn-play-again">
+            Play Again
+          </button>
         </div>
 
         <div class="play-circle ${this._data} choice-circle">
@@ -245,71 +252,13 @@ class FaceOffView {
     this.#gameContainerElement.addEventListener('click', getUserResponse);
   }
 
-  //   compareChoices(computerResponse, userSelection) {
-  //     if (computerResponse === userSelection) {
-  //       console.log("It is a draw");
-  //     }
-
-  //     if (computerResponse === "rock" && userSelection === "scissors") {
-  //       console.log("The CPU wins");
-  //     } else if (userSelection === "rock" && computerResponse === "scissors") {
-  //       console.log("You win!");
-  //     }
-
-  //     if (computerResponse === "paper" && userSelection === "rock") {
-  //       console.log("The CPU wins");
-  //     } else if (userSelection === "paper" && computerResponse === "rock") {
-  //       console.log("You win!");
-  //     }
-
-  //     if (computerResponse === "scissors" && userSelection === "paper") {
-  //       console.log("The CPU wins");
-  //     } else if (userSelection === "scissors" && computerResponse === "paper") {
-  //       console.log("You win!");
-  //     }
-
-  //     if (computerResponse === "spock" && userSelection === "scissors") {
-  //       console.log("The CPU wins");
-  //     } else if (userSelection === "spock" && computerResponse === "scissors") {
-  //       console.log("You win!");
-  //     }
-
-  //     if (computerResponse === "spock" && userSelection === "rock") {
-  //       console.log("The CPU wins");
-  //     } else if (userSelection === "spock" && computerResponse === "rock") {
-  //       console.log("You win!");
-  //     }
-
-  //     if (computerResponse === "paper" && userSelection === "spock") {
-  //       console.log("The CPU wins");
-  //     } else if (userSelection === "paper" && computerResponse === "spock") {
-  //       console.log("You win!");
-  //     }
-
-  //     if (computerResponse === "lizard" && userSelection === "spock") {
-  //       console.log("The CPU wins");
-  //     } else if (userSelection === "lizard" && computerResponse === "spock") {
-  //       console.log("You win!");
-  //     }
-
-  //     if (computerResponse === "rock" && userSelection === "lizard") {
-  //       console.log("The CPU wins");
-  //     } else if (userSelection === "rock" && computerResponse === "lizard") {
-  //       console.log("You win!");
-  //     }
-
-  //     if (computerResponse === "scissors" && userSelection === "lizard") {
-  //       console.log("The CPU wins");
-  //     } else if (userSelection === "scissors" && computerResponse === "lizard") {
-  //       console.log("You win!");
-  //     }
-
-  //     if (computerResponse === "lizard" && userSelection === "paper") {
-  //       console.log("The CPU wins");
-  //     } else if (userSelection === "lizard" && computerResponse === "paper") {
-  //       console.log("You win!");
-  //     }
-  //   }
+  addHandlerClickRefresh(handler) {
+    document.addEventListener('click', function (e) {
+      if (e.target && e.target.dataset.id === 'playBtn') {
+        window.location.reload();
+      }
+    });
+  }
 }
 
 export default new FaceOffView();

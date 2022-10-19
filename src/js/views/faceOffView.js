@@ -70,7 +70,8 @@ class FaceOffView {
         </div>
 
         <div class="win-lose-container">
-          <h2 class="win-lose-text">${this._resultText}</h2>
+          <h2 class="win-lose-text">${this._resultText.verdict}</h2>
+          <p class="win-lose-description">${this._resultText.description}</p>
           <button data-id="playBtn" class="btn btn-play-again">
             Play Again
           </button>
@@ -80,7 +81,7 @@ class FaceOffView {
           <img
             class="play-icon in-play-icon"
             src="./src/img/logos/icon-${this._data}.svg"
-            alt="Paper icon"
+            alt="${this._data} icon"
           />
         </div>
       </div>
@@ -112,113 +113,132 @@ class FaceOffView {
       scoreElement.classList.add('score-fade-in');
       if (computerResponse === userSelection) {
         console.log('It is a draw');
-        resultText.push('Draw');
+        resultText.verdict.push('Draw');
         score[0] = +score + 0;
       }
 
       if (computerResponse === 'rock' && userSelection === 'scissors') {
         console.log('The CPU wins');
-        resultText.push('You lose');
+        resultText.verdict.push('You lose');
+        resultText.description.push('Scissors is crushed by rock');
         score[0] = +score - 1;
         console.log(score);
       } else if (userSelection === 'rock' && computerResponse === 'scissors') {
         console.log('You win!');
-        resultText.push('You win');
+        resultText.verdict.push('You win');
+        resultText.description.push('Rock crushes scissors');
         score[0] = +score + 1;
-        // persistScore();
         console.log(score);
       }
 
       if (computerResponse === 'paper' && userSelection === 'rock') {
         console.log('You lose');
-        resultText.push('You lose');
+        resultText.verdict.push('You lose');
+        resultText.description.push('Rock is covered by paper');
         score[0] = +score - 1;
       } else if (userSelection === 'paper' && computerResponse === 'rock') {
         console.log('You win!');
-        resultText.push('You win');
+        resultText.verdict.push('You win');
+        resultText.description.push('Paper covers rock');
         score[0] = +score + 1;
       }
 
       if (computerResponse === 'scissors' && userSelection === 'paper') {
         console.log('You lose');
-        resultText.push('You lose');
+        resultText.verdict.push('You lose');
+        resultText.description.push('Paper is cut by scissors');
         score[0] = +score - 1;
       } else if (userSelection === 'scissors' && computerResponse === 'paper') {
         console.log('You win!');
-        resultText.push('You win');
+        resultText.verdict.push('You win');
+        resultText.description.push('Scissors cuts paper');
         score[0] = +score + 1;
       }
 
       if (computerResponse === 'spock' && userSelection === 'scissors') {
         console.log('The CPU wins');
-        resultText.push('You lose');
+        resultText.verdict.push('You lose');
+        resultText.description.push('Scissors is smashed by Spock');
         score[0] = +score - 1;
       } else if (userSelection === 'spock' && computerResponse === 'scissors') {
         console.log('You win!');
-        resultText.push('You win');
+        resultText.verdict.push('You win');
+        resultText.description.push('Spock smashes scissors');
         score[0] = +score + 1;
       }
 
       if (computerResponse === 'spock' && userSelection === 'rock') {
         console.log('The CPU wins');
-        resultText.push('You lose');
+        resultText.verdict.push('You lose');
+        resultText.description.push('Rock is vaporized by Spock');
         score[0] = +score - 1;
       } else if (userSelection === 'spock' && computerResponse === 'rock') {
         console.log('You win!');
-        resultText.push('You win');
+        resultText.verdict.push('You win');
+        resultText.description.push('Spock vaporizes rock');
         score[0] = +score + 1;
       }
 
       if (computerResponse === 'paper' && userSelection === 'spock') {
         console.log('The CPU wins');
-        resultText.push('You lose');
+        resultText.verdict.push('You lose');
+        resultText.description.push('Spock is disproved by paper');
         score[0] = +score - 1;
       } else if (userSelection === 'paper' && computerResponse === 'spock') {
         console.log('You win!');
-        resultText.push('You win');
+        resultText.verdict.push('You win');
+        resultText.description.push('Paper disproves Spock');
         score[0] = +score + 1;
       }
 
       if (computerResponse === 'lizard' && userSelection === 'spock') {
         console.log('The CPU wins');
-        resultText.push('You lose');
+        resultText.verdict.push('You lose');
+        resultText.description.push('Spock is poisoned by lizard');
         score[0] = +score - 1;
       } else if (userSelection === 'lizard' && computerResponse === 'spock') {
         console.log('You win!');
-        resultText.push('You win');
+        resultText.verdict.push('You win');
+        resultText.description.push('Lizard poisons Spock');
         score[0] = +score + 1;
       }
 
       if (computerResponse === 'rock' && userSelection === 'lizard') {
         console.log('The CPU wins');
-        resultText.push('You lose');
+        resultText.verdict.push('You lose');
+        resultText.description.push('Lizard is crushed by rock');
         score[0] = +score - 1;
       } else if (userSelection === 'rock' && computerResponse === 'lizard') {
         console.log('You win!');
-        resultText.push('You win');
+        resultText.verdict.push('You win');
+        resultText.description.push('Rock crushes lizard');
         score[0] = +score + 1;
       }
 
       if (computerResponse === 'scissors' && userSelection === 'lizard') {
         console.log('The CPU wins');
-        resultText.push('You lose');
+        resultText.verdict.push('You lose');
+        resultText.description.push('Lizard is decapitated by scissors');
         score[0] = +score - 1;
       } else if (
         userSelection === 'scissors' &&
         computerResponse === 'lizard'
       ) {
         console.log('You win!');
-        resultText.push('You win');
+        resultText.verdict.push('You win');
+        resultText.description.push('Scissors decapitates lizard');
         score[0] = +score + 1;
       }
 
       if (computerResponse === 'lizard' && userSelection === 'paper') {
         console.log('The CPU wins');
-        resultText.push('You lose');
+        resultText.verdict.push('You lose');
+        resultText.description.push('Paper is eaten by lizard');
         score[0] = +score - 1;
       } else if (userSelection === 'lizard' && computerResponse === 'paper') {
         console.log('You win!');
-        resultText.push('You win');
+        resultText.verdict.push('You win');
+        resultText.description.push('Lizard eats paper');
         score[0] = +score + 1;
       }
       persistScore();

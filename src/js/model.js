@@ -4,9 +4,12 @@ import { INITIAL_SCORE } from './config.js';
 export const state = {
   computerResponse: {},
   userResponse: [],
-  resultText: [],
+  resultText: {
+    verdict: [],
+    description: [],
+  },
   // score: INITIAL_SCORE,
-  score: [0],
+  score: [INITIAL_SCORE],
 };
 
 // Computer Response:

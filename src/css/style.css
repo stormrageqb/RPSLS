@@ -49,6 +49,7 @@
 .score-container h1 {
   color: hsl(229, 25%, 31%);
   font-size: 8rem;
+  text-align: center;
 }
 
 /* MAIN-CONTENT - START - STYLES */
@@ -167,6 +168,12 @@ main {
   letter-spacing: 0.3rem;
 }
 
+.win-lose-description {
+  font-size: 2.5rem;
+  text-align: center;
+  padding-top: 3.6rem;
+}
+
 .btn-play-again {
   font-size: 2rem;
   background-color: #fff;
@@ -272,7 +279,7 @@ main {
 @keyframes slidein {
   from {
     opacity: 0;
-    margin-right: 100%;
+    margin-right: 300%;
     width: 300%;
   }
   to {
@@ -287,11 +294,11 @@ main {
 }
 
 .win-lose-container {
-  animation-delay: 1.8s;
+  animation-delay: 1.7s;
 }
 
 .score-fade-in {
-  animation-delay: 3s;
+  animation-delay: 2.8s;
 }
 
 @keyframes fadeIn {

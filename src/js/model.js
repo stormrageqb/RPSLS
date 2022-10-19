@@ -8,7 +8,6 @@ export const state = {
     verdict: [],
     description: [],
   },
-  // score: INITIAL_SCORE,
   score: [INITIAL_SCORE],
 };
 

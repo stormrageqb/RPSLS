@@ -251,6 +251,8 @@ main {
   font-size: 2.4rem;
 }
 
+/* FACEOFF ANIMATIONS */
+
 .user-fade-in,
 .house-fade-in,
 .win-lose-container,
@@ -260,6 +262,24 @@ main {
   animation-duration: 4s;
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
+}
+
+.score-fade-in {
+  animation-duration: 2s;
+  animation-name: slidein;
+}
+
+@keyframes slidein {
+  from {
+    opacity: 0;
+    margin-right: 100%;
+    width: 300%;
+  }
+  to {
+    opacity: 1;
+    margin-right: 0%;
+    width: 100%;
+  }
 }
 
 .house-fade-in {
@@ -282,14 +302,6 @@ main {
     opacity: 1;
   }
 }
-
-/* .rule-text {
-  padding-bottom: 1.2rem;
-}
-
-.rule-list li:last-child {
-  padding-bottom: 0;
-} */
 
 .hidden {
   visibility: hidden;

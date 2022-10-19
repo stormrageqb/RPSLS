@@ -40,6 +40,15 @@ class FaceOffView {
     window.location.reload();
   }
 
+  // Alternative for re-rendering HTML:
+  // renderGameStart() {
+  //   const gameRoundContainer = document.querySelector('.game-round-container');
+  //   const startMarkup = this.#generateStartMarkup();
+  //   // this._parentElement.removeChild(gameRoundContainer);
+  //   this._parentElement.innerHTML = '';
+  //   this._parentElement.insertAdjacentHTML('afterbegin', startMarkup);
+  // }
+
   #generateMarkup() {
     console.log(this._data);
     console.log(this._userResponse);
@@ -80,20 +89,6 @@ class FaceOffView {
     return `<h1 class="score">${this._score}</h1>`;
   }
 
-  // getUserResponse(data) {
-  //   this._userResponse = data;
-  //   this.#gameContainerElement.addEventListener("click", function (e) {
-  //     const playBtn = e.target.closest(".play-circle");
-  //     console.log(playBtn);
-  //     // if (!playBtn) return;
-  //     this._userResponse = playBtn.dataset.id;
-  //     console.log(userResponse);
-  //   });
-
-  //   console.log(this._userResponse);
-  //   return this._userResponse;
-  // }
-
   addHandlerClick(
     handler,
     computerResponse,
@@ -102,8 +97,6 @@ class FaceOffView {
     score,
     persistScore
   ) {
-    // console.log(this._userResponse);
-    // console.log(resultText);
     console.log(score);
     const compareChoices = function (
       computerResponse,
@@ -255,7 +248,7 @@ class FaceOffView {
   addHandlerClickRefresh(handler) {
     document.addEventListener('click', function (e) {
       if (e.target && e.target.dataset.id === 'playBtn') {
-        window.location.reload();
+        handler();
       }
     });
   }

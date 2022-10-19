@@ -304,7 +304,8 @@ main {
 
 /* FACEOFF ANIMATIONS */
 
-.user-fade-in .house-fade-in,
+.user-fade-in,
+.house-fade-in,
 .win-lose-container,
 .score-fade-in {
   opacity: 0;

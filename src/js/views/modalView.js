@@ -39,6 +39,11 @@ class ModalView {
 
   // Reset
 
+  resetScore() {
+    localStorage.clear();
+    window.location.reload();
+  }
+
   toggleReset() {
     this._ruleOverlay.classList.toggle('hidden');
     this._resetWindow.classList.toggle('hidden');
@@ -49,6 +54,7 @@ class ModalView {
   }
 
   _addHandlerHideReset() {
+    this._btnConfirm.addEventListener('click', this.resetScore.bind(this));
     this._btnDecline.addEventListener('click', this.toggleReset.bind(this));
     this._ruleOverlay.addEventListener('click', this.toggleReset.bind(this));
   }

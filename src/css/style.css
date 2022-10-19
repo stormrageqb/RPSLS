@@ -251,6 +251,33 @@ main {
   font-size: 2.4rem;
 }
 
+.user-fade-in,
+.house-fade-in,
+.win-lose-container {
+  opacity: 0;
+  animation-name: fadeIn;
+  animation-duration: 4s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+
+.house-fade-in {
+  animation-delay: 1s;
+}
+
+.win-lose-container {
+  animation-delay: 1.8s;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
 /* .rule-text {
   padding-bottom: 1.2rem;
 }

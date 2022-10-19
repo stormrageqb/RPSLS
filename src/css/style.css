@@ -187,7 +187,8 @@ main {
 }
 
 /* MODAL STYLES */
-.overlay {
+.overlay,
+.rule-overlay {
   position: fixed;
   top: 0;
   left: 0;

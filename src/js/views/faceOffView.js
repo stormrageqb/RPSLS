@@ -58,7 +58,10 @@ class FaceOffView {
         <h2 class="choice-text">You picked:</h2>
         <p>&nbsp;</p>
         <h2 class="choice-text">The house picked:</h2>
-        <div class="play-circle ${this._userResponse[0]} choice-circle">
+        <div
+          class="play-circle ${this
+            ._userResponse[0]} choice-circle user-fade-in"
+        >
           <img
             class="play-icon in-play-icon"
             src="./src/img/logos/icon-${this._userResponse[0]}.svg"
@@ -73,7 +76,7 @@ class FaceOffView {
           </button>
         </div>
 
-        <div class="play-circle ${this._data} choice-circle">
+        <div class="play-circle ${this._data} choice-circle house-fade-in">
           <img
             class="play-icon in-play-icon"
             src="./src/img/logos/icon-${this._data}.svg"
@@ -105,6 +108,8 @@ class FaceOffView {
       score,
       persistScore
     ) {
+      const scoreElement = document.querySelector('.score');
+      scoreElement.classList.add('score-fade-in');
       if (computerResponse === userSelection) {
         console.log('It is a draw');
         resultText.push('Draw');
@@ -115,7 +120,6 @@ class FaceOffView {
         console.log('The CPU wins');
         resultText.push('You lose');
         score[0] = +score - 1;
-        // persistScore();
         console.log(score);
       } else if (userSelection === 'rock' && computerResponse === 'scissors') {
         console.log('You win!');

@@ -253,7 +253,8 @@ main {
 
 .user-fade-in,
 .house-fade-in,
-.win-lose-container {
+.win-lose-container,
+.score-fade-in {
   opacity: 0;
   animation-name: fadeIn;
   animation-duration: 4s;
@@ -267,6 +268,10 @@ main {
 
 .win-lose-container {
   animation-delay: 1.8s;
+}
+
+.score-fade-in {
+  animation-delay: 3s;
 }
 
 @keyframes fadeIn {

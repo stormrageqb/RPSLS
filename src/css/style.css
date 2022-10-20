@@ -16,7 +16,8 @@
   align-items: center;
   padding: 2.4rem;
   padding-bottom: 2rem;
-  margin: 4.8rem 0;
+  margin: 4.6rem 0;
+  margin-bottom: 7.4rem;
   border: 0.3rem solid hsl(217, 16%, 45%);
   border-radius: 1.4rem;
   width: 100%;
@@ -127,6 +128,7 @@ main {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   gap: 9.4rem;
+  row-gap: 5.2rem;
   justify-items: center;
   align-items: center;
 }
@@ -247,7 +249,7 @@ main {
 }
 
 .rule-img {
-  height: 58rem;
+  height: 40rem;
   justify-self: center;
 }
 

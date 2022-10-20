@@ -3,10 +3,34 @@
     font-size: 48.25%;
   }
 
+  body {
+    max-width: 120rem;
+  }
+
   .pentagon-img {
     height: 32rem;
   }
+}
+
+@media (max-width: 60em) {
+  html {
+    font-size: 46.25%;
+  }
+
   body {
-    max-width: 120rem;
+    max-width: 100rem;
+  }
+
+  .choice-circle {
+    height: 24rem;
+    width: 24rem;
+  }
+
+  .btn-play-again {
+    padding: 2.6rem 5.2rem;
+  }
+
+  .choice-text {
+    font-size: 2.6rem;
   }
 }

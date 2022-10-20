@@ -166,18 +166,23 @@
     font-size: 5.5rem;
   }
 
+  .pentagon-container {
+    margin-top: 6.2rem;
+    /* margin-bottom: 6.2rem; */
+  }
+
   .pentagon-img {
-    height: 30rem;
+    height: 25rem;
   }
 
   .play-circle {
-    height: 12rem;
-    width: 12rem;
+    height: 10rem;
+    width: 10rem;
   }
 
   .scissors {
-    left: 10rem;
-    top: -7rem;
+    left: 8rem;
+    top: -4.5rem;
   }
 
   .game-round-container {
@@ -185,8 +190,8 @@
   }
 
   .play-icon {
-    width: 3.7rem;
-    height: 4.6rem;
+    width: 2.7rem;
+    height: 3.6rem;
   }
 
   .choice-circle {
@@ -232,7 +237,7 @@
 
   .btn-close-modal {
     font-size: 5rem;
-    top: 2.6rem;
+    top: 2.8rem;
   }
 
   .rule-img {
@@ -250,5 +255,9 @@
   .btn-decline {
     padding-left: 2.5rem;
     padding-right: 2.5rem;
+  }
+
+  .footer {
+    margin-top: 6.2rem;
   }
 }

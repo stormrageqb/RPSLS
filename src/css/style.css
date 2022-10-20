@@ -16,8 +16,9 @@
   align-items: center;
   padding: 2.4rem;
   padding-bottom: 2rem;
-  margin: 4.6rem 0;
-  margin-bottom: 7.4rem;
+  margin: 2.8rem 0;
+  /* margin-bottom: 7.4rem; */
+  margin-bottom: 0;
   border: 0.3rem solid hsl(217, 16%, 45%);
   border-radius: 1.4rem;
   width: 100%;
@@ -67,6 +68,7 @@ main {
 
 .pentagon-container {
   position: relative;
+  margin-top: 4.6rem;
 }
 
 .play-circle {
@@ -142,8 +144,8 @@ main {
 /* Overwrite styles for round */
 .choice-circle {
   position: static;
-  height: 34rem;
-  width: 34rem;
+  height: 27.5rem;
+  width: 27.5rem;
   cursor: default;
 }
 
@@ -181,6 +183,7 @@ main {
   background-color: #fff;
   color: #3b4262;
   padding: 2.8rem 8.2rem;
+  margin-top: 6.2rem;
 }
 
 .btn-play-again:hover {
@@ -366,4 +369,9 @@ main {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+.btn-rules {
+  padding-left: 7.8rem;
+  padding-right: 7.8rem;
 }

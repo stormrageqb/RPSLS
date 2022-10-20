@@ -1,0 +1,12 @@
+@media (max-width: 84em) {
+  html {
+    font-size: 48.25%;
+  }
+
+  .pentagon-img {
+    height: 32rem;
+  }
+  body {
+    max-width: 120rem;
+  }
+}

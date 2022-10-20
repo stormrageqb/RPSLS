@@ -16,7 +16,7 @@
   align-items: center;
   padding: 2.4rem;
   padding-bottom: 2rem;
-  margin: 2.8rem 0;
+  margin: 2rem 0;
   /* margin-bottom: 7.4rem; */
   margin-bottom: 0;
   border: 0.3rem solid hsl(217, 16%, 45%);
@@ -69,6 +69,10 @@ main {
 .pentagon-container {
   position: relative;
   margin-top: 4.6rem;
+}
+
+.pentagon-img {
+  height: 100%;
 }
 
 .play-circle {

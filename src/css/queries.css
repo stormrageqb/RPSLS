@@ -184,6 +184,11 @@
     height: 4.6rem;
   }
 
+  .choice-circle {
+    height: 15rem;
+    width: 15rem;
+  }
+
   .btn {
     font-size: 1.2rem;
     padding-left: 2.1rem;
@@ -193,5 +198,22 @@
   .btn-rules {
     padding-right: 4.8rem;
     padding-left: 4.8rem;
+  }
+
+  .choice-text {
+    font-size: 1.2rem;
+  }
+
+  .win-lose-text {
+    font-size: 6.4rem;
+  }
+
+  .btn-play-again {
+    font-size: 1.8rem;
+    padding: 2.4rem 10.8rem;
+  }
+
+  .win-lose-container {
+    margin-top: 0;
   }
 }

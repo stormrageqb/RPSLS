@@ -237,7 +237,7 @@
 
   .btn-close-modal {
     font-size: 5rem;
-    top: 2.8rem;
+    top: 3rem;
   }
 
   .rule-img {
@@ -258,6 +258,12 @@
   }
 
   .footer {
-    margin-top: 6.2rem;
+    margin-top: 6.4rem;
+    margin-bottom: 1.2rem;
+  }
+
+  .in-play-icon {
+    width: 4.7rem;
+    height: 5.6rem;
   }
 }

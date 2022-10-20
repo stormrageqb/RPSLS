@@ -55,9 +55,9 @@ class FaceOffView {
     console.log(this._resultText);
     return /* HTML */ `
       <div class="game-round-container">
-        <h2 class="choice-text">You picked:</h2>
-        <p>&nbsp;</p>
-        <h2 class="choice-text">The house picked:</h2>
+        <h2 class="choice-text user-text">You picked:</h2>
+        <p class="empty-cell">&nbsp;</p>
+        <h2 class="choice-text computer-text">The house picked:</h2>
         <div
           class="play-circle ${this
             ._userResponse[0]} choice-circle user-fade-in"

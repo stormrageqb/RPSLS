@@ -15,23 +15,18 @@ export const state = {
 const getComputerResponse = function (num) {
   const randomNum = Math.floor(Math.random() * num);
   if (randomNum === 0) {
-    // return (state.computerResponse = "rock");
     return 'rock';
   }
   if (randomNum === 1) {
-    // return (state.computerResponse = "paper");
     return 'paper';
   }
   if (randomNum === 2) {
-    // return (state.computerResponse = "scissors");
     return 'scissors';
   }
   if (randomNum === 3) {
-    // return (state.computerResponse = "lizard");
     return 'lizard';
   }
   if (randomNum === 4) {
-    // return (state.computerResponse = "spock");
     return 'spock';
   }
 };
@@ -40,7 +35,7 @@ const returnComputerState = function () {
 };
 returnComputerState();
 
-console.log(state.computerResponse);
+// console.log(state.computerResponse); // - For testing purposes - allows you to see cpu response in console
 
 export const persistScore = function () {
   try {
@@ -54,10 +49,7 @@ export const persistScore = function () {
 
 const init = function () {
   const storage = localStorage.getItem('score');
-  console.log(storage);
   if (storage) state.score = JSON.parse(storage);
-  console.log(state.score);
-  // localStorage.clear();
 };
 
 init();

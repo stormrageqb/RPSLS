@@ -3,7 +3,7 @@ import FaceOffView from './views/faceOffView.js';
 // Necessary for modal render
 import ModalView from './views/modalView.js';
 
-const controlComputerResponse = function () {
+const controlResponse = function () {
   try {
     // model.getComputerResponse()
     FaceOffView.renderComputerResponse(
@@ -27,19 +27,10 @@ const refreshPage = function () {
 };
 
 controlScoreLoad();
-// const controlUserResponse = function () {
-//   try {
-//     const userResponse = faceOffView.getUserResponse((data = "paper"));
-//     // if (!userResponse) return;
-//     console.log(userResponse);
-//   } catch (err) {
-//     console.error(err);
-//   }
-// };
 
 const init = function () {
   FaceOffView.addHandlerClick(
-    controlComputerResponse,
+    controlResponse,
     model.state.computerResponse,
     model.state.userResponse,
     model.state.resultText,
@@ -50,4 +41,3 @@ const init = function () {
 };
 
 init();
-// controlComputerResponse();

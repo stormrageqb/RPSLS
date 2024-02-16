@@ -4,7 +4,7 @@
 
 ## Link
 
-Play the game here: https://mully7773.github.io/RPSLS/
+Play the game here: https://rpsls-indol.vercel.app/
 
 ## Screenshots
 
@@ -76,7 +76,3 @@ MVC architecture
 <br>
 Mobile responsiveness
 
-## Questions:
-
-Feel free to contact me at mully7773@gmail.com if you have any questions. <br>
-You can view more of my projects at https://github.com/Mully7773.
